@@ -9,10 +9,11 @@ function M.setup()
 		local file_type = " %y"
 		local right_align = "%="
 		local line_no = "%10([%l/%L%)]"
-		local pct_thru_file = "%5p%%"
+		local coll = "%3(%v%)"
+		local pct_thru_file = "%7p%%"
 
 		return string.format(
-			"%s%s%s%s%s%s%s%s",
+			"%s%s%s%s%s%s%s%s%s",
 			mode,
 			file_name,
 			buf_nr,
@@ -20,11 +21,13 @@ function M.setup()
 			file_type,
 			right_align,
 			line_no,
+			coll,
 			pct_thru_file
 		)
 	end
 
 	vim.opt.statusline = status_line()
+	vim.opt.laststatus = 3
 end
 
 return M

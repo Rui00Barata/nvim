@@ -119,13 +119,18 @@ function M.setup()
       cmd = { "MarkdownPreview" },
     }
 
+		-- Vim-Matchup
+		use { "andymass/vim-matchup" }
+
 		-- Treesitter
 		use {
 			"nvim-treesitter/nvim-treesitter",
-			 run = ":TSUpdate",
-			 config = function()
-				 require("config.treesitter").setup()
-			 end,
+			opt = true,
+			event = "BufRead",
+			run = ":TSUpdate",
+			config = function()
+				require("config.treesitter").setup()
+			end,
 		}
 
 		-- Nvim-Tree
@@ -140,6 +145,38 @@ function M.setup()
 			end,
 		}
 
+		-- Dressing
+		use {
+			"stevearc/dressing.nvim",
+			event = "BufEnter",
+			config = function()
+				require("dressing").setup {
+					select = {
+						backend = { "telescope", "fzf", "builtin" },
+					},
+				}
+			end,
+		}
+
+		-- Telescope
+		use { 
+			"nvim-telescope/telescope.nvim", 
+			module = "telescope", 
+			as = "telescope",
+			config = function()
+				require("config.telescope").setup()
+			end,
+		}
+
+		-- BufferLine
+		use {
+			"akinsho/nvim-bufferline.lua",
+			event = "BufReadPre",
+			wants = "nvim-web-devicons",
+			config = function()
+				require("config.bufferline").setup()
+			end,
+		}
 
     if packer_bootstrap then
       print "Restart Neovim required after installation!"
