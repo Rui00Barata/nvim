@@ -23,6 +23,7 @@ function M.setup()
     ["w"] = { "<cmd>wa<CR>", "Save" },
     ["q"] = { "<cmd>qa!<CR>", "Quit" },
 
+
     p = {
       name = "Packer",
       c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -36,6 +37,11 @@ function M.setup()
       name = "Git",
       s = { "<cmd>Neogit<CR>", "Status" },
     },
+
+		f = {
+			name = "Files",
+			b = { "<cmd>NvimTreeToggle<cr>", "Nvim-Tree"},
+		},
   }
 
   whichkey.setup(conf)
