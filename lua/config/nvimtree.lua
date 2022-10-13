@@ -8,7 +8,7 @@ function M.setup()
       number = true,
     },
     filters = {
-      custom = { ".git" },
+      custom = { ".git", ".DS_Store" },
     },
   }
 end

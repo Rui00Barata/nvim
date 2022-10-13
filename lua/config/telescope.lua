@@ -7,10 +7,11 @@ function M.setup()
 		defaults = {
 			mappings = {
 				i = {
-					["<C-s>"} = actions.file_split,
+					["<C-s>"] = actions.file_split,
 				}
 			}
 		}
+	}
 end
 
 return M

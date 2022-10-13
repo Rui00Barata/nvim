@@ -90,24 +90,6 @@ function M.setup()
         require("Comment").setup {}
       end,
     }
-
-    -- Easy hopping
-    use {
-      "phaazon/hop.nvim",
-      cmd = { "HopWord", "HopChar1" },
-      config = function()
-        require("hop").setup {}
-      end,
-    }
-
-    -- Easy motion
-    use {
-      "ggandor/lightspeed.nvim",
-      keys = { "s", "S", "f", "F", "t", "T" },
-      config = function()
-        require("lightspeed").setup {}
-      end,
-    }
 		
     -- Markdown
     use {
@@ -152,7 +134,7 @@ function M.setup()
 			config = function()
 				require("dressing").setup {
 					select = {
-						backend = { "telescope", "fzf", "builtin" },
+						backend = { "telescope" },
 					},
 				}
 			end,
