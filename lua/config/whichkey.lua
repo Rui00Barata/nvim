@@ -20,8 +20,11 @@ function M.setup()
   }
 
   local mappings = {
-    ["w"] = { "<cmd>wa<CR>", "Save" },
-    ["q"] = { "<cmd>qa!<CR>", "Quit" },
+    ["w"] = { "<cmd>w<CR>", "Save" },
+    ["W"] = { "<cmd>wa<CR>", "Save all" },
+    ["q"] = { "<cmd>q<CR>", "Quit" },
+    ["Q"] = { "<cmd>qa!<CR>", "Quit all" },
+    ["b"] = { "<cmd>bd<CR>", "Close Buffer" },
 
 
     p = {
