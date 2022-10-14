@@ -160,7 +160,8 @@ function M.setup()
 			end,
 		}
 		
-	use {
+		-- Nvim-CMP
+		use {
 			"hrsh7th/nvim-cmp",
 			event = "InsertEnter",
 			opt = true,
@@ -185,6 +186,18 @@ function M.setup()
 				disable = false,
 			}
 		}
+
+		-- Auto Pairs
+		use {
+			"windwp/nvim-autopairs",
+			wants = "nvim-treesitter",
+			module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
+			config = function()
+				require("config.autopairs").setup()
+			end,
+		}
+
+
 
     if packer_bootstrap then
       print "Restart Neovim required after installation!"

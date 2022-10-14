@@ -20,12 +20,12 @@ function M.setup()
   }
 
   local mappings = {
-    ["w"] = { "<cmd>w<CR>", "Save" },
-    ["W"] = { "<cmd>wa<CR>", "Save all" },
-    ["q"] = { "<cmd>q<CR>", "Quit" },
-    ["Q"] = { "<cmd>qa!<CR>", "Quit all" },
-    ["b"] = { "<cmd>bd<CR>", "Close Buffer" },
-
+    ["w"] = { "<cmd>w<cr>", "Save" },
+    ["W"] = { "<cmd>wa<cr>", "Save all" },
+    ["q"] = { "<cmd>q<cr>", "Quit" },
+    ["Q"] = { "<cmd>qa!<cr>", "Quit all" },
+    ["b"] = { "<cmd>bd<cr>", "Close Buffer" },
+    ["B"] = { "<cmd>bd!<cr>", "Close Buffer" },
 
     p = {
       name = "Packer",
@@ -38,7 +38,7 @@ function M.setup()
 
     g = {
       name = "Git",
-      s = { "<cmd>Neogit<CR>", "Status" },
+      s = { "<cmd>Neogit<cr>", "Status" },
     },
 
 		f = {
