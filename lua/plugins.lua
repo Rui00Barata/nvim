@@ -90,7 +90,7 @@ function M.setup()
         require("Comment").setup {}
       end,
     }
-		
+
     -- Markdown
     use {
       "iamcco/markdown-preview.nvim",
@@ -141,9 +141,9 @@ function M.setup()
 		}
 
 		-- Telescope
-		use { 
-			"nvim-telescope/telescope.nvim", 
-			module = "telescope", 
+		use {
+			"nvim-telescope/telescope.nvim",
+			module = "telescope",
 			as = "telescope",
 			config = function()
 				require("config.telescope").setup()
@@ -159,7 +159,7 @@ function M.setup()
 				require("config.bufferline").setup()
 			end,
 		}
-		
+
 		-- Nvim-CMP
 		use {
 			"hrsh7th/nvim-cmp",
@@ -197,6 +197,17 @@ function M.setup()
 			end,
 		}
 
+		-- LSP
+		use {
+			"neovim/nvim-lspconfig",
+			wants = { "nvim-lsp-installer" },
+			config = function()
+				require("config.lsp").setup()
+			end,
+			requires = {
+				"williamboman/nvim-lsp-installer",
+			},
+		}
 
 
     if packer_bootstrap then
