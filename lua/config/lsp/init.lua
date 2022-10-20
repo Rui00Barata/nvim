@@ -4,6 +4,7 @@ local servers = {
 	asm_lsp = {},
 	bashls = {},
 	clangd = {},
+	html = {},
 	jsonls = {},
 	tsserver = {},
 	texlab = {},
