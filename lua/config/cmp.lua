@@ -6,7 +6,6 @@ function M.setup()
 		return col ~= 0 and vim.api.nvim_buf_get_lines(0, line-1, line, true)[1]:sub(col,col):match "%s" == nil
 	end
 
-	local luasnip = require "luasnip"
 	local cmp = require "cmp"
 
 	cmp.setup {
@@ -15,17 +14,10 @@ function M.setup()
 
 		experimental = { native_menu = false, ghost_text = true },
 
-		snippet = {
-			expand = function(args)
-				require("luasnip").lsp_expand(args.body)
-			end,
-		},
-
 		formatting = {
 			format = function(entry, vim_item)
 				vim_item.menu = ({
 					buffer = "[Buff]",
-					luasnip = "[Snip]",
 					nvim_lua = "[Lua]",
 					nvim_lsp = "[LSP]",
 					path = "[Path]",
@@ -57,7 +49,6 @@ function M.setup()
 			{ name = "nvim_lua" },
 			{ name = "nvim_lsp" },
 			{ name = "path" },
-			{ name = "luasnip" },
 			{ name = "buffer", keyword_length = 5 },
 		},
 

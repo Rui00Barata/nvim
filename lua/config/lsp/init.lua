@@ -2,6 +2,7 @@ local M = {}
 
 local servers = {
 	asm_lsp = {},
+	bashls = {},
 	clangd = {},
 	jsonls = {},
 	tsserver = {},

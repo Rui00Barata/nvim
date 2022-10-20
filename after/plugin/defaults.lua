@@ -37,5 +37,6 @@ vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
 -- Aliases
 vim.cmd [[
-	command Mestrado cd ~/Documents/UBI/Mestrado/2Year/
+	command Masters cd ~/Documents/UBI/Masters/
+	command Uni cd ~/Documents/UBI/
 ]]
