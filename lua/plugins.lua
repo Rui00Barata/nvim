@@ -42,14 +42,30 @@ function M.setup()
     use { "wbthomason/packer.nvim" }
 
     -- Colorscheme
-    use({
-      'projekt0n/github-nvim-theme',
+--    use({
+--      'projekt0n/github-nvim-theme',
+--      config = function()
+--        require('github-theme').setup({
+--          theme_style = "dimmed",
+--        })
+--      end
+--    })
+
+		use {
+      "sainnhe/everforest",
       config = function()
-        require('github-theme').setup({
-          theme_style = "dimmed",
-        })
-      end
-    })
+        vim.cmd "colorscheme everforest"
+      end,
+    }
+
+		-- Nvim-Terminal
+		use {
+			's1n7ax/nvim-terminal',
+			config = function()
+					vim.o.hidden = true
+					require('config.nvim-terminal').setup()
+			end,
+		}
 
     -- NeoGit
     use {

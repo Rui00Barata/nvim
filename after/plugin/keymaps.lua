@@ -35,7 +35,10 @@ keymap("n", "<Up>", ":resize -1<CR>", default_opts)
 keymap("n", "<Down>", ":resize +1<CR>", default_opts)
 
 -- Move around split using <C-{h,j,k,l}>
-keymap('n', '<C-h>', '<C-w>h', default_opts)
-keymap('n', '<C-j>', '<C-w>j', default_opts)
-keymap('n', '<C-k>', '<C-w>k', default_opts)
-keymap('n', '<C-l>', '<C-w>l', default_opts)
+keymap("n", "<C-h>", "<C-w>h", default_opts)
+keymap("n", "<C-j>", "<C-w>j", default_opts)
+keymap("n", "<C-k>", "<C-w>k", default_opts)
+keymap("n", "<C-l>", "<C-w>l", default_opts)
+
+-- Terminal
+keymap("t", "<Esc>", "<C-\\><C-n>", default_opts)

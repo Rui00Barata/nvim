@@ -4,7 +4,7 @@ function M.setup()
   require("nvim-treesitter.configs").setup {
     -- A list of parser names, or "all"
     ensure_installed = {
-			"bash", "c", "cpp", "html", "javascript", "lua", "markdown", "menhir", "ocaml", "ocaml_interface", "ocamllex", "python", 
+			"bash", "c", "cpp", "javascript", "lua", "markdown", "menhir", "ocaml", "ocaml_interface", "ocamllex", "python",
 		},
 
     -- Install languages synchronously (only applied to `ensure_installed`)

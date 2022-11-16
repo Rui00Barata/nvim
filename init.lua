@@ -80,6 +80,6 @@ if vim.g.vscode then
   keymap('n', '<C-l>', '<C-w>l', default_opts)
 else
   -- ordinary Neovim
-  endrequire("statusline").setup()
+  require("statusline").setup()
   require("plugins").setup()
 end

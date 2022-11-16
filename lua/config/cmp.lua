@@ -10,7 +10,7 @@ function M.setup()
 
 	cmp.setup {
 
-		completion = { completeopt = "menu,menuone,noinsert", keyword_length = 1, max_item_count = 10 },
+		completion = { completeopt = "menu,menuone,noinsert", keyword_length = 1},
 
 		experimental = { native_menu = false, ghost_text = true },
 
@@ -46,10 +46,10 @@ function M.setup()
 		},
 
 		sources = {
-			{ name = "nvim_lua" },
-			{ name = "nvim_lsp" },
-			{ name = "path" },
-			{ name = "buffer", keyword_length = 5 },
+			{ name = "nvim_lua", max_item_count = 5 },
+			{ name = "nvim_lsp", max_item_count = 10 },
+			{ name = "path", max_item_count = 3 },
+			{ name = "buffer", max_item_count = 3 },
 		},
 
 		window = {

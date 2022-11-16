@@ -49,7 +49,7 @@ function M.setup()
 			g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Find Files" },
 			b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Find Files" },
 		},
-  }
+ }
 
   whichkey.setup(conf)
   whichkey.register(mappings, opts)
