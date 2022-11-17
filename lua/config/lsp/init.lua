@@ -33,7 +33,7 @@ local servers = {
 	},
 	marksman = {},
 	ocamllsp = {},
-	pylsp = {},
+	jedi_language_server = {},
 }
 
 local function on_attach(client, bufnr)
