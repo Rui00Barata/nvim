@@ -67,6 +67,14 @@ function M.setup()
 			end,
 		}
 
+		-- Wrapping
+		use {
+			"andrewferrier/wrapping.nvim",
+			config = function()
+					require("config.wrapping").setup()
+			end,
+    }
+
     -- NeoGit
     use {
       "TimUntersberger/neogit",

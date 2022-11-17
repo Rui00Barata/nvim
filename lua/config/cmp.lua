@@ -18,8 +18,8 @@ function M.setup()
 			format = function(entry, vim_item)
 				vim_item.menu = ({
 					buffer = "[Buff]",
-					nvim_lua = "[Lua]",
 					nvim_lsp = "[LSP]",
+					nvim_lua = "[Lua]",
 					path = "[Path]",
 				})[entry.source.name]
 				return vim_item
@@ -46,8 +46,8 @@ function M.setup()
 		},
 
 		sources = {
-			{ name = "nvim_lua", max_item_count = 5 },
 			{ name = "nvim_lsp", max_item_count = 10 },
+			{ name = "nvim_lua", max_item_count = 5 },
 			{ name = "path", max_item_count = 3 },
 			{ name = "buffer", max_item_count = 3 },
 		},
