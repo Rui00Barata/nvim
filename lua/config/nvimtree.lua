@@ -6,6 +6,7 @@ function M.setup()
     hijack_netrw = true,
     view = {
       number = true,
+      relativenumber = true,
     },
     filters = {
       custom = { ".git", ".DS_Store" },

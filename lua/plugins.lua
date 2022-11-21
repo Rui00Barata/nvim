@@ -67,6 +67,16 @@ function M.setup()
 			end,
 		}
 
+		-- Signature Completion
+		use {
+			"ray-x/lsp_signature.nvim",
+		}
+
+		-- Function Enumerator
+		use {
+			'simrat39/symbols-outline.nvim'
+		}
+
 		-- Wrapping
 		use {
 			"andrewferrier/wrapping.nvim",
