@@ -26,6 +26,7 @@ function M.setup()
     ["Q"] = { "<cmd>qa!<cr>", "Quit all" },
     ["b"] = { "<cmd>bd<cr>", "Close Buffer" },
     ["B"] = { "<cmd>bd!<cr>", "Close Buffer" },
+	  ["g"]  = { "<cmd>Neogit<cr>", "Git status" },
 
     p = {
       name = "Packer",
@@ -34,11 +35,6 @@ function M.setup()
       s = { "<cmd>PackerSync<cr>", "Sync" },
       S = { "<cmd>PackerStatus<cr>", "Status" },
       u = { "<cmd>PackerUpdate<cr>", "Update" },
-    },
-
-    g = {
-      name = "Git",
-      s = { "<cmd>Neogit<cr>", "Status" },
     },
 
 		f = {

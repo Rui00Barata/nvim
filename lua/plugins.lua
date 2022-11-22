@@ -50,7 +50,6 @@ function M.setup()
 --        })
 --      end
 --    })
-
 		use {
       "sainnhe/everforest",
       config = function()
@@ -68,17 +67,19 @@ function M.setup()
 		}
 
 		-- Signature Completion
-		-- use {
-		-- 	"ray-x/lsp_signature.nvim",
-		-- 	config = function ()
-		-- 		require "lsp_signature".setup({
-		-- 				bind = true, -- This is mandatory, otherwise border config won't get registered.
-		-- 				handler_opts = {
-		-- 					border = "rounded"
-		-- 				}
-		-- 		})
-		-- 	end,
-		-- }
+		use {
+			"ray-x/lsp_signature.nvim",
+			config = function ()
+				require "lsp_signature".setup({
+						bind = true, -- This is mandatory, otherwise border config won't get registered.
+						doc_lines = 0,
+						hint_enable = false,
+						handler_opts = {
+							border = "rounded"
+						}
+				})
+			end,
+		}
 
 		-- Symbols Outline
 		use {
@@ -213,11 +214,21 @@ function M.setup()
 			config = function()
 				require("config.cmp").setup()
 			end,
+			wants = { "LuaSnip" },
 			requires = {
 				"hrsh7th/cmp-buffer",
 				"hrsh7th/cmp-path",
 				"hrsh7th/cmp-nvim-lua",
+				"saadparwaiz1/cmp_luasnip",
 				"hrsh7th/cmp-nvim-lsp",
+				{
+					"L3MON4D3/LuaSnip",
+					wants = "friendly-snippets",
+					config = function()
+						require("config.luasnip").setup()
+					end,
+				},
+				"rafamadriz/friendly-snippets",
 				disable = false,
 			}
 		}
