@@ -45,9 +45,9 @@ function M.setup()
 			name = "Files",
 			n = { "<cmd>NvimTreeToggle<cr>", "Toogle Nvim-Tree"},
 			r = { "<cmd>NvimTreeRefresh<cr>", "Refresh Nvim-Tree"},
-			f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find Files" },
-			g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Find Files" },
-			b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Find Files" },
+			f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find file" },
+			g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Live grep" },
+			b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "List open buffers" },
 		},
  }
 

@@ -68,13 +68,24 @@ function M.setup()
 		}
 
 		-- Signature Completion
-		use {
-			"ray-x/lsp_signature.nvim",
-		}
+		-- use {
+		-- 	"ray-x/lsp_signature.nvim",
+		-- 	config = function ()
+		-- 		require "lsp_signature".setup({
+		-- 				bind = true, -- This is mandatory, otherwise border config won't get registered.
+		-- 				handler_opts = {
+		-- 					border = "rounded"
+		-- 				}
+		-- 		})
+		-- 	end,
+		-- }
 
-		-- Function Enumerator
+		-- Symbols Outline
 		use {
-			'simrat39/symbols-outline.nvim'
+			'simrat39/symbols-outline.nvim',
+			config = function ()
+				require("symbols-outline").setup()
+			end,
 		}
 
 		-- Wrapping

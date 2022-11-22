@@ -9,21 +9,33 @@ g.maplocalleader = " "
 
 -- Various Optimizations
 opt.termguicolors = true					-- Enable colors in terminal
+
 opt.hlsearch = true								-- Set highlight on search
+
 opt.number = true									-- Make line numbers default
-opt.relativenumber = true									-- Make line numbers default
+opt.relativenumber = true					-- Set relative numbers to current line
+opt.cursorline = true						-- Highlight current line
+
 opt.breakindent = true						-- Enable break indent
+
 opt.undofile = true								-- Save undo history
+
 opt.ignorecase = true							-- Case insensitive searching unless /C or capital in search
 opt.smartcase = true							-- Smart case
+
 opt.updatetime = 250            	-- Decrease update time
-opt.signcolumn = "yes"						-- Always show sign column
-opt.clipboard = "unnamedplus"			-- Access system clipboard
 opt.timeoutlen = 300							-- Time in milliseconds to wait for a mapped sequence to complete
-opt.scrolloff = 12								-- Number of lines always above or below the cursor
-opt.splitright = true							-- Number of lines always above or bellow the cursor
-opt.splitbelow = true							-- Number of lines always above or bellow the cursor
-opt.lazyredraw = true							-- Number of lines always above or bellow the cursor
+
+opt.signcolumn = "yes"						-- Always show sign column
+
+opt.clipboard = "unnamedplus"			-- Access system clipboard
+
+opt.scrolloff = 15								-- Number of lines always above or below the cursor
+
+opt.splitright = true							-- When window splited verticly always split right
+opt.splitbelow = true							-- When window splited horizontly always split below
+
+opt.lazyredraw = true
 
 -- Highlight on yank
 vim.cmd [[

@@ -23,6 +23,7 @@ local function keymappings(client, bufnr)
       a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
       d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
       i = { "<cmd>LspInfo<CR>", "Lsp Info" },
+      o = { "<cmd>SymbolsOutline<CR>", "Toogle symbols Outline" },
     },
   }
   if client.server_capabilities.document_formatting then
