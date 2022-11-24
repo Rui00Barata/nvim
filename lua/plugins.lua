@@ -81,6 +81,16 @@ function M.setup()
 			end,
 		}
 
+		-- VimTex
+		use {
+			'lervag/vimtex',
+			ft = {'tex'},
+--			config = function ()
+--				require("config.vimtex").setup()
+--			end,
+		}
+
+
 		-- Symbols Outline
 		use {
 			'simrat39/symbols-outline.nvim',
