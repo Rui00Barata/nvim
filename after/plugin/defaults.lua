@@ -14,7 +14,7 @@ opt.hlsearch = true								-- Set highlight on search
 
 opt.number = true									-- Make line numbers default
 opt.relativenumber = true					-- Set relative numbers to current line
-opt.cursorline = true						-- Highlight current line
+opt.cursorline = true							-- Highlight current line
 
 opt.breakindent = true						-- Enable break indent
 

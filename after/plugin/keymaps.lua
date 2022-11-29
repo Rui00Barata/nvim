@@ -42,3 +42,6 @@ keymap("n", "<C-l>", "<C-w>l", default_opts)
 
 -- Terminal
 keymap("t", "<Esc>", "<C-\\><C-n>", default_opts)
+
+-- Open links
+keymap("n", 'gx', ":execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>", default_opts)
