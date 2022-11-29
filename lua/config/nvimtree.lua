@@ -7,6 +7,11 @@ function M.setup()
     view = {
       number = true,
       relativenumber = true,
+			mappings = {
+				list = {
+					{ key = "+", action = "cd"}
+				}
+			}
     },
     filters = {
       custom = { ".git", ".DS_Store" },
@@ -14,7 +19,6 @@ function M.setup()
 		sync_root_with_cwd = true,
 		update_focused_file = {
 			enable = true,
-			update_root = true,
 		}
   }
 end
