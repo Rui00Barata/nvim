@@ -56,6 +56,7 @@ function M.setup()
         vim.cmd "colorscheme everforest"
       end,
     }
+--		use { 'junegunn/seoul256.vim' }
 
 		-- Nvim-Terminal
 		use {
