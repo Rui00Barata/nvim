@@ -2,10 +2,12 @@ local api = vim.api
 local g = vim.g
 local opt = vim.opt
 
+
 -- Remap leader and local leader to <Space>
 api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 g.mapleader = " "
 g.maplocalleader = " "
+
 
 -- Various Optimizations
 opt.termguicolors = true					-- Enable colors in terminal
@@ -37,6 +39,7 @@ opt.splitbelow = true							-- When window splited horizontly always split below
 
 opt.lazyredraw = true
 
+
 -- Highlight on yank
 vim.cmd [[
   augroup YankHighlight
@@ -45,8 +48,10 @@ vim.cmd [[
   augroup end
 ]]
 
+
 -- Don't auto commenting new lines
 vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
+
 
 -- Aliases
 vim.cmd [[
