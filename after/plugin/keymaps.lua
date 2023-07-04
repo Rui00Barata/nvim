@@ -47,4 +47,4 @@ keymap("t", "<Esc>", "<C-\\><C-n>", default_opts)
 keymap("n", 'gx', ":execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>", default_opts)
 
 -- Open links
-keymap("n", '<A-p>', '"0p', default_opts)
+keymap("n", 'π', '"0p', default_opts)

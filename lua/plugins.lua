@@ -110,7 +110,7 @@ function M.setup()
 
     -- NeoGit
     use {
-      "TimUntersberger/neogit",
+      "NeogitOrg/neogit",
 			cmd = "Neogit",
       requires = "nvim-lua/plenary.nvim",
       config = function()
