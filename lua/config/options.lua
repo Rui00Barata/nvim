@@ -22,9 +22,6 @@ opt.shiftround = true     -- Round indent
 opt.shiftwidth = 4        -- Size of an indent
 opt.tabstop = 4           -- Number of spaces tabs count for
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
-if vim.fn.has("nvim-0.10") == 1 then
-  opt.smoothscroll = true
-end
 
 -- Files
 opt.undofile = true    -- Allows for persistent undo files, even across sessions
@@ -71,24 +68,3 @@ opt.showmode = false -- Dont show mode since we have a statusline
 
 -- Session
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" } -- What should be saved about a session
-
--- Folding
-opt.fillchars = {
-    foldopen = "",
-    foldclose = "",
-    fold = " ",
-    foldsep = " ",
-    diff = "╱",
-    eob = " ",
-}
-opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
-opt.foldlevel = 99
-if vim.fn.has("nvim-0.9.0") == 1 then
-  opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
-end
-if vim.fn.has("nvim-0.10") == 1 then
-  opt.foldmethod = "expr"
-  opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
-else
-  opt.foldmethod = "indent"
-end

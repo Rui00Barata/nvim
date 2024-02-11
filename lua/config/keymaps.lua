@@ -1,4 +1,3 @@
-local Util = require("lazyvim.util")
 local map = vim.keymap.set
 
 -- Remove any leader bind
@@ -24,7 +23,7 @@ map("v", ">", ">gv")
 map("v", "p", '"_dP', {silent=true})
 
 -- Cancel search highlighting with ESC
-map("n", "<ESC>", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", {noremap = true, silent = true})
+map("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", {noremap = true, silent = true})
 
 -- Move Lines
 map("n", "∆", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -34,8 +33,27 @@ map("i", "˚", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 map("v", "∆", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "˚", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
--- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+-- Resizing panes
+map("n", "<Left>", ":vertical resize +1<CR>", {noremap = true, silent = true})
+map("n", "<Right>", ":vertical resize -1<CR>", {noremap = true, silent = true})
+map("n", "<Up>", ":resize -1<CR>", {noremap = true, silent = true})
+map("n", "<Down>", ":resize +1<CR>", {noremap = true, silent = true})
+
+
+-- Move around split using <C-{h,j,k,l}>
+map("n", "<C-h>", "<C-w>h", {noremap = true, silent = true})
+map("n", "<C-j>", "<C-w>j", {noremap = true, silent = true})
+map("n", "<C-k>", "<C-w>k", {noremap = true, silent = true})
+map("n", "<C-l>", "<C-w>l", {noremap = true, silent = true})
+
+-- save file
+map({ "i", "x", "n", "s" }, "<leader>w", "<cmd>w<cr><esc>", { desc = "Save file" })
+
+-- lazy
+map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
+
+-- quit
+map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
+
+-- Terminal Mappings
+map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
