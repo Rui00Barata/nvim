@@ -1,6 +1,9 @@
 local g = vim.g
 local opt = vim.opt
 
+-- Global Settings
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 g.mapleader = ' '
 g.maplocalleader = ' '
 

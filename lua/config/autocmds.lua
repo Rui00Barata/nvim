@@ -32,12 +32,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 })
 
 -- don't auto commenting new lines
-vim.api.nvim_create_autocmd({ "NoAutoCommentLines" }, {
-  group = augroup("no_auto_comment_new_lines"),
-  callback = function()
-    vim.cmd([[au BufEnter * set fo-=c fo-=r fo-=o]])
-  end,
-})
+vim.cmd([[au BufEnter * set fo-=c fo-=r fo-=o]])
 
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {

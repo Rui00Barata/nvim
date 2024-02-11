@@ -47,7 +47,7 @@ map("n", "<C-k>", "<C-w>k", {noremap = true, silent = true})
 map("n", "<C-l>", "<C-w>l", {noremap = true, silent = true})
 
 -- save file
-map({ "i", "x", "n", "s" }, "<leader>w", "<cmd>w<cr><esc>", { desc = "Save file" })
+map({ "x", "n", "s" }, "<leader>w", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 -- lazy
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
