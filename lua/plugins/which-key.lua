@@ -24,7 +24,7 @@ function M.config()
 	local mappings = {
 
 		t = {
-			name = ' Nvim-[T]ree',
+			name = 'Nvim-[T]ree',
 			t = { api.tree.toggle, '[T]oggle tree'},
 			r = { api.tree.reload, '[R]efresh tree'},
 		},
