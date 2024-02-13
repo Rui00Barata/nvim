@@ -28,7 +28,7 @@ function M.config()
 		},
 			on_attach = my_on_attach,
 		filters = {
-			custom = { ".git", ".DS_Store" },
+			custom = { "^\\.git", ".DS_Store" },
 		},
 		sync_root_with_cwd = true,
 		update_focused_file = { enable = true }
