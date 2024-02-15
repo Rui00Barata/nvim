@@ -15,6 +15,7 @@ function M.config()
         ensure_installed = {
             "go", "gomod", "gosum", "gowork",
             "lua", "luap",
+			"yaml",
         },
 		modules = {},
 		ignore_install = {},

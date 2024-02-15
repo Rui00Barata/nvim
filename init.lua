@@ -163,11 +163,12 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   gopls = {},
+
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+  yamlls = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
