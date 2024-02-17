@@ -7,9 +7,6 @@ function M.config_servers(servers, on_attach)
 	local mason = require('mason')
 	local mason_lspconfig = require('mason-lspconfig')
 
-	require('plugins.lsp.keymaps')()
-
-
 	-- mason-lspconfig requires that these setup functions are called in this order
 	-- before setting up the servers.
 	mason.setup()
