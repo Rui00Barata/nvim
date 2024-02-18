@@ -1,9 +1,34 @@
 local M = {
-	'williamboman/mason.nvim',
-	'williamboman/mason-lspconfig.nvim',
+	-- LSP Configuration & Plugins
+	'neovim/nvim-lspconfig',
+	dependencies = {
+		-- Automatically install LSPs to stdpath for neovim
+		{ 'williamboman/mason.nvim', config = true },
+		'williamboman/mason-lspconfig.nvim',
+
+		-- Useful status updates for LSP
+		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+		{ 'j-hui/fidget.nvim',       opts = {} },
+
+		-- Additional lua configuration, makes nvim stuff amazing!
+		'folke/neodev.nvim',
+	},
 }
 
-function M.config_servers(servers, on_attach)
+local servers = {
+	gopls = {},
+	yamlls = {},
+	lua_ls = {
+		Lua = {
+			workspace = { checkThirdParty = false },
+			telemetry = { enable = false },
+			diagnostics = { disable = { 'missing-fields' } },
+		},
+	},
+}
+
+function M.config()
+	local on_attach = require('keymaps.lsp').keymaps
 	local mason = require('mason')
 	local mason_lspconfig = require('mason-lspconfig')
 

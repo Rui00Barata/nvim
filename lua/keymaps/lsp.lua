@@ -1,33 +1,6 @@
-local M = {
-	-- LSP Configuration & Plugins
-	'neovim/nvim-lspconfig',
-	dependencies = {
-		-- Automatically install LSPs to stdpath for neovim
-		{ 'williamboman/mason.nvim', config = true },
-		'williamboman/mason-lspconfig.nvim',
+local M = {}
 
-		-- Useful status updates for LSP
-		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-		{ 'j-hui/fidget.nvim',       opts = {} },
-
-		-- Additional lua configuration, makes nvim stuff amazing!
-		'folke/neodev.nvim',
-	},
-}
-
-local servers = {
-	gopls = {},
-	yamlls = {},
-	lua_ls = {
-		Lua = {
-			workspace = { checkThirdParty = false },
-			telemetry = { enable = false },
-			diagnostics = { disable = { 'missing-fields' } },
-		},
-	},
-}
-
-local function on_attach(_, bufnr)
+function M.keymaps(_, bufnr)
 	local nmap = function(keys, func, desc)
 		if desc then
 			desc = 'LSP: ' .. desc
@@ -64,11 +37,6 @@ local function on_attach(_, bufnr)
 	vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
 		vim.lsp.buf.format()
 	end, { desc = 'Format current buffer with LSP' })
-end
-
-
-function M.config()
-	require('plugins.lsp.installer').config_servers(servers, on_attach)
 end
 
 return M
