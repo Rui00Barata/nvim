@@ -45,9 +45,9 @@ function M.config()
 		formatting = {
 			format = function(entry, vim_item)
 				vim_item.menu = ({
-					luasnip =  "[Snp]",
-					nvim_lsp = "[LSP]",
-					async_path =     "[Pth]",
+					luasnip =  	 "[Snp]",
+					nvim_lsp =   "[LSP]",
+					async_path = "[Pth]",
 				})[entry.source.name]
 				return vim_item
 			end,
