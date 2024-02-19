@@ -41,9 +41,9 @@ function M.config()
 			['r'] = { name = '[R]ename', _ = 'which_key_ignore' },
 			['s'] = { name = '[S]earch', _ = 'which_key_ignore', mode = "v"},
 			['t'] = { name = 'Nvim-[T]ree', _ = 'which_key_ignore' },
-			-- ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
+			['g'] = { name = '[G]it', _ = 'which_key_ignore', mode = { 'n', 'v' }},
 			-- ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-			g = { neogit.open, 'Neo[g]it' },
+			['gg'] = { neogit.open, 'Neo[g]it' },
 		},
 		opts = {
 			mode = "n", -- Normal mode
@@ -55,22 +55,6 @@ function M.config()
 		}
 	}
 	whichkey.register(other.mappings, other.opts)
-
-	local visual = {
-		mappings = {
-			name = 'VISUAL <leader>',
-			['h'] = { 'Git [H]unk' },
-		},
-		opts = {
-			mode = "v", -- Normal mode
-			prefix = "<leader>",
-			buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-			silent = true, -- use `silent` when creating keymaps
-			noremap = true, -- use `noremap` when creating keymaps
-			nowait = false, -- use `nowait` when creating keymaps
-		}
-	}
-	whichkey.register(visual.mappings, visual.opts)
 end
 
 return M
