@@ -7,7 +7,7 @@ function M.set_keymaps()
 	local global_keymaps = {
 		mappings = {
 			name = 'Nvim-[T]ree',
-			t = { api.tree.toggle, '[T]oggle tree' },
+			o = { api.tree.toggle, '[T]oggle tree' },
 			r = { api.tree.reload, '[R]efresh tree' },
 		},
 		opts = {

@@ -17,9 +17,9 @@ function M.config()
 
 	local comment = { -- Comment -> Option + C
 		mappings = {
-				name = '[C]omment',
-				c = { 'Toggle line [c]omment' },
-				b = { 'Toggle [b]lock comment' },
+			name = '[C]omment',
+			c = { 'Toggle line [c]omment' },
+			b = { 'Toggle [b]lock comment' },
 		},
 		opts = {
 			mode = { "n", "v" }, -- Normal mode
@@ -31,22 +31,22 @@ function M.config()
 		}
 	}
 	whichkey.register(comment.mappings, comment.opts)
--- quit
+	-- quit
 
 	local quit_and_save = {
 		mappings = {
-			name = 'File Settings',
-			['w'] = {'<cmd>w<cr>', 'Save'},
-			['W'] = {'<cmd>wa<cr>', 'Save all'},
-			['q'] = {'<cmd>q<cr>', 'Quit'},
-			['qq'] = {'<cmd>q!<cr>', 'Quit without saving'},
-			['Q'] = {'<cmd>qa<cr>', 'Quit all'},
-			['b'] = {'<cmd>bd<cr>', 'Close buffer'},
-			['B'] = {'<cmd>b!<cr>', 'Close buffer without saving'},
+			name = '[F]ile Settings',
+			['w'] = { '<cmd>w<cr>', 'Sae' },
+			['W'] = { '<cmd>wa<cr>', 'Save all' },
+			['q'] = { '<cmd>q<cr>', 'Quit' },
+			['qq'] = { '<cmd>q!<cr>', 'Quit without saving' },
+			['Q'] = { '<cmd>qa<cr>', 'Quit all' },
+			['b'] = { '<cmd>bd<cr>', 'Close buffer' },
+			['B'] = { '<cmd>b!<cr>', 'Close buffer without saving' },
 		},
 		opts = {
 			mode = "n", -- Normal mode
-			prefix = "<leader>q",
+			prefix = "<leader>f",
 			buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 			silent = true, -- use `silent` when creating keymaps
 			noremap = true, -- use `noremap` when creating keymaps
@@ -61,10 +61,9 @@ function M.config()
 			['c'] = { name = '[C]ode', },
 			['d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
 			['r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-			['s'] = { name = '[S]earch', _ = 'which_key_ignore', mode = "v"},
+			['s'] = { name = '[S]earch', _ = 'which_key_ignore', mode = { 'n', 'v' } },
 			['t'] = { name = 'Nvim-[T]ree', _ = 'which_key_ignore' },
-			['g'] = { name = '[G]it', _ = 'which_key_ignore', mode = { 'n', 'v' }},
-			-- ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+			['g'] = { name = '[G]it', _ = 'which_key_ignore', mode = { 'n', 'v' } },
 			['gg'] = { neogit.open, 'Neo[g]it' },
 		},
 		opts = {

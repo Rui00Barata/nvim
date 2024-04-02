@@ -1,28 +1,29 @@
 local M = {
-    'nvim-treesitter/nvim-treesitter',
-    version = false,
-    build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
-    dependencies = {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    },
+	'nvim-treesitter/nvim-treesitter',
+	version = false,
+	build = ":TSUpdate",
+	event = { "BufReadPost", "BufNewFile" },
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter-textobjects",
+	},
 }
 
 function M.config()
-    local configs = require("nvim-treesitter.configs")
+	local configs = require("nvim-treesitter.configs")
 
-    configs.setup({
-        ensure_installed = {
-            "go", "gomod", "gosum", "gowork",
-            "lua", "luap",
+	configs.setup({
+		ensure_installed = {
+			"go", "gomod", "gosum", "gowork",
+			"lua", "luap",
 			"yaml",
-        },
+			"dockerfile",
+		},
 		modules = {},
 		ignore_install = {},
 		auto_install = false,
-        sync_install = false,
-        highlight = { enable = true },
-        indent = { enable = true },
+		sync_install = false,
+		highlight = { enable = true },
+		indent = { enable = true },
 		incremental_selection = {
 			enable = true,
 			keymaps = {
@@ -68,8 +69,8 @@ function M.config()
 			},
 			swap = {
 				enable = true,
-				swap_next = { ['<leader>a'] = '@parameter.inner'},
-				swap_previous = { ['<leader>A'] = '@parameter.inner'},
+				swap_next = { ['<leader>a'] = '@parameter.inner' },
+				swap_previous = { ['<leader>A'] = '@parameter.inner' },
 			},
 		},
 	})

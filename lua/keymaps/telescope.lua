@@ -46,17 +46,17 @@ end
 
 
 function M.keymaps()
-
 	local files = {
 		mappings = {
 			name = '+[F]iles',
 			[' '] = { tbi.buffers, 'Show open buffers' },
 			['r'] = { tbi.oldfiles, '[R]ecently opened files' },
 			['f'] = { tbi.find_files, '[F]iles in Directory' },
+			['g'] = { tbi.git_files, 'Search [G]it files' },
 		},
 		opts = {
 			mode = "n",
-			prefix = "<leader>f",
+			prefix = "<leader>sf",
 			buffer = nil,
 			silent = true,
 			noremap = true,
@@ -68,27 +68,25 @@ function M.keymaps()
 
 	local search = {
 		mappings = {
-			name = '+[Search]',
+			name = '+[G]rep',
 			['f'] = { function()
-					-- You can pass additional configuration to telescope to change theme, layout, etc.
-					tbi.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-						winblend = 10,
-						previewer = false,
-					})
-				end, 'Search in current [f]ile' },
-			['o'] = {telescope_live_grep_open_files, 'Search in [O]pen files'},
-			['t'] = {tbi.builtin, 'Search [T]elescope'},
-			['h'] = {tbi.help_tags, 'Search [H]elp'},
-			['w'] = {tbi.grep_string, 'Search [W]ord', mode = {"n", "v"}},
-			['d'] = {tbi.live_grep, 'Search Working [D]irectory'},
-			['g'] = {tbi.git_files, 'Search [G]it files'},
-			['G'] = {live_grep_git_root, 'Search [G]it Root'},
-			['l'] = {tbi.diagnostics, 'Search [L]SP diagnostics'},
-			['r'] = {tbi.resume, 'Search [R]esume'},
+				tbi.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+					winblend = 10,
+					previewer = false,
+				})
+			end, 'Search in current [f]ile' },
+			['o'] = { telescope_live_grep_open_files, 'Search in [O]pen files' },
+			['t'] = { tbi.builtin, 'Search [T]elescope' },
+			['h'] = { tbi.help_tags, 'Search [H]elp' },
+			['w'] = { tbi.grep_string, 'Search [W]ord', mode = { "n", "v" } },
+			['d'] = { tbi.live_grep, 'Search in Working [D]irectory' },
+			['g'] = { live_grep_git_root, 'Search in [G]it files' },
+			['l'] = { tbi.diagnostics, 'Search [L]SP diagnostics' },
+			['r'] = { tbi.resume, 'Search [R]esume' },
 		},
 		opts = {
 			mode = "n",
-			prefix = "<leader>s",
+			prefix = "<leader>sg",
 			buffer = nil,
 			silent = true,
 			noremap = true,

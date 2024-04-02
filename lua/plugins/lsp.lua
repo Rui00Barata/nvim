@@ -18,6 +18,7 @@ local M = {
 local servers = {
 	gopls = {},
 	yamlls = {},
+	dockerls = {},
 	lua_ls = {
 		Lua = {
 			workspace = { checkThirdParty = false },

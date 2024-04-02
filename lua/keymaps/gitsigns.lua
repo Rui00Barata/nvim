@@ -5,12 +5,6 @@ local wk = require('which-key')
 function M.on_attach(bufnr)
 	local gs = package.loaded.gitsigns
 
-	local function map(mode, l, r, opts)
-		opts = opts or {}
-		opts.buffer = bufnr
-		vim.keymap.set(mode, l, r, opts)
-	end
-
 	local navigation = {
 		mappings = {
 			[']c'] = { function()
@@ -84,7 +78,7 @@ function M.on_attach(bufnr)
 			},
 			['d'] = { gs.diffthis, '[D]iff against index' },
 			['D'] = {
-				function ()
+				function()
 					gs.diffthis '~'
 				end,
 				'[D]iff against last commit'
@@ -103,7 +97,7 @@ function M.on_attach(bufnr)
 
 	local text_object = {
 		mappings = {
-			['ih'] = {':<C-U>Gitsigns select_hunk<CR>', 'Select g[i]t [h]unk'}
+			['ih'] = { ':<C-U>Gitsigns select_hunk<CR>', 'Select g[i]t [h]unk' }
 		},
 		opts = {
 			mode = { 'o', 'x' },
