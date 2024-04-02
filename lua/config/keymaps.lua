@@ -26,12 +26,12 @@ map("v", "p", '"_dP', { silent = true })
 map("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", { noremap = true, silent = true })
 
 -- Move Lines
-map("n", "∆", "<cmd>m .+1<cr>==", { desc = "Move down" })
-map("n", "˚", "<cmd>m .-2<cr>==", { desc = "Move up" })
-map("i", "∆", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
-map("i", "˚", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
-map("v", "∆", ":m '>+1<cr>gv=gv", { desc = "Move down" })
-map("v", "˚", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- Resizing panes
 map("n", "<Left>", ":vertical resize +1<CR>", { noremap = true, silent = true })
