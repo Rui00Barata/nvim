@@ -10,6 +10,13 @@ function M.keymaps(_, bufnr)
 
 		vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
 	end
+	local imap = function(keys, func, desc)
+		if desc then
+			desc = 'LSP: ' .. desc
+		end
+
+		vim.keymap.set('i', keys, func, { buffer = bufnr, desc = desc })
+	end
 
 	nmap('<leader>ca', function()
 		vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source' } } }
@@ -17,7 +24,7 @@ function M.keymaps(_, bufnr)
 
 	-- See `:help K` for why this keymap
 	nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-	nmap('<C-K>', vim.lsp.buf.signature_help, 'Signature Documentation')
+	imap('<C-K>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
 	local lsp = {
 		mappings = {

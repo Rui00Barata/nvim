@@ -16,14 +16,23 @@ local M = {
 }
 
 local servers = {
+	clangd = {},
+	--[[ sqlls = {
+		root_dir = function(fname)
+			return require('lspconfig').util.find_git_ancestor(fname) or vim.fn.getcwd()
+		end,
+	}, ]]
 	gopls = {},
+	pyright = {},
 	yamlls = {},
 	dockerls = {},
 	lua_ls = {
-		Lua = {
-			workspace = { checkThirdParty = false },
-			telemetry = { enable = false },
-			diagnostics = { disable = { 'missing-fields' } },
+		settings = {
+			Lua = {
+				workspace = { checkThirdParty = false },
+				telemetry = { enable = false },
+				diagnostics = { disable = { 'missing-fields' } },
+			},
 		},
 	},
 }
@@ -36,7 +45,6 @@ function M.config()
 	-- mason-lspconfig requires that these setup functions are called in this order
 	-- before setting up the servers.
 	mason.setup()
-	mason_lspconfig.setup()
 
 	-- Setup neovim lua configuration
 	require('neodev').setup()

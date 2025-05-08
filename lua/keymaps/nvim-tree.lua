@@ -9,6 +9,7 @@ function M.set_keymaps()
 			name = 'Nvim-[T]ree',
 			o = { api.tree.toggle, '[T]oggle tree' },
 			r = { api.tree.reload, '[R]efresh tree' },
+			g = { api.tree.toggle_gitignore_filter, 'Toggle [Git] ignore filter' }
 		},
 		opts = {
 			mode = { "n", "v" },
